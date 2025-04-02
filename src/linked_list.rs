@@ -93,13 +93,11 @@ impl<T> SinglyLinkedList<T> { // in Rust, the `impl` keyword is where we define 
 
         let mut curr = &mut self.head;
 
-        while let Some(node) = curr {
-            if let Some(next_node) = &node.next { // note the use of this pattern again except in an if statement
-                if next_node.next.is_none() {
-                    break;
-                }
+        for _ in 0..self.length - 2 { // the _ is just like a Haskell wildcard
+                                      // also the 0..self.length - 2 is a range, like [0..n] in Haskell
+            if let Some(node) = curr {
+                curr = &mut node.next;
             }
-            curr = &mut node.next;
         }
 
         if let Some(node) = curr {
@@ -127,5 +125,7 @@ impl<T> SinglyLinkedList<T> { // in Rust, the `impl` keyword is where we define 
             }
             curr = &node.next;
         }
+
+        None
     }
 }
