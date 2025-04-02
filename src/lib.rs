@@ -1,13 +1,13 @@
-mod linked_list;
+mod singly_linked_list;
 mod stack;
-mod queue;
-mod deque;
-mod binary_tree;
-mod hash_map;
-mod priority_queue;
+// mod queue;
+// mod deque;
+// mod binary_search_tree;
+// mod hash_map;
+// mod priority_queue;
 
-pub use linked_list::SinglyLinkedList;
-// pub use stack::Stack;
+pub use singly_linked_list::SinglyLinkedList;
+pub use stack::Stack;
 // pub use queue::Queue;
 // pub use deque::Deque;
 // pub use binary_tree::BinaryTree;
